@@ -1,26 +1,49 @@
+## Informações Basicas da Api
+- Api criada com FastApi + SqlAlchemi
+- Projeto utiliza o banco de dados Postgres
+- Versão do python 3.10.11
 
-Passo A Passo.
 ## Config inicial
-#### Criar o ambiente virtual
+### Criar o ambiente virtual
   python3 -m venv .venv
-#### Se conectar no ambiente
+
+### Se conectar no ambiente
   source .venv/Scripts/activate
 
-## Iniciar a aplicação em desenvolvimento
+### instalando as dependencia
+  Após logar no ambiente usar: pip install -r requirements.txt
+
+### Criar o arquivo .env
+  Criar um arquivo .env na raiz do projeto com as variavies abaixo para conexão
+  #### -- Config Dev
+  DB_ENGINE=postgresql+psycopg2
+  DB_USER=usuario do banco
+  DB_PASSWORD=Senha do banco
+  DB_HOST=localhost
+  DB_PORT=5432
+  DB_NAME=Nome do banco
+  DB_SCHEMA=public
+  #### -Para Teste
+  DB_ENGINE_TEST=postgresql+psycopg2
+  DB_USER_TEST=usuario do banco
+  DB_PASSWORD_TEST=Senha do banco
+  DB_HOST_TEST=localhost
+  DB_PORT_TEST=5433
+  DB_NAME_TEST=Nome do banco
+  DB_SCHEMA_TEST=public
+  #### -Config JWT
+  SECRET_KEY_JWT= Gerar token
+  ALGORITHM=HS256
+  ACCESS_TOKEN_EXPIRE_MINUTES=30
+  REFRESH_TOKEN_EXPIRE_MINUTES=400
+
+### Como gerar um token
+- criar um arquivo .ipynb ou rodar direto no terminar.
+import secrets
+token = secrets.token_urlsafe(32)
+token
+
+### Iniciar a aplicação em desenvolvimento
  uvicorn src.main:app --reload
 
-#### Instalar as dependencias
-    fastapi
-    psycopg2-binary - Se for usar postgree
-    asyncpg  - Se for usar postgree
-    aiomysql  - Se for usar o mysql
-    sqlalchemy 
-    uvicorn
-    python-jose[cryptography]
-    pytz
-    passlib
-    python-multipart
-    pydantic[email]
-
-## Config do Projeto
 
