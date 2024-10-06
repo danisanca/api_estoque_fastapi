@@ -108,3 +108,7 @@ token
  * alembic revision -m "<mensagem_da_migracao>"
 - Para aplicar a alteração criada usar o comando abaixo:
  * Usar o comando alembic upgrade head
+
+## Em breve.
+ - Integração com git Workflow para testes 
+ - Docker para virtualização do banco + Api para app Mobile.

@@ -42,9 +42,11 @@ class Users(BASE,Serializer):
     __tablename__ = 'users'
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4, unique=True, nullable=False)
-    name = Column(String(255), nullable=False)
-    email = Column(String(255), nullable=False)
+    name = Column(String(72), nullable=False)
+    email = Column(String(82), nullable=False)
     password = Column(String(255), nullable=False)
-    status = Column(String(255), nullable=False)
+    status = Column(String(32), nullable=False)
+    role = Column(String(32), nullable=False)
     created_at = Column(TIMESTAMP, default=datetime.now())
     updated_at = Column(TIMESTAMP, default=datetime.now(), onupdate=datetime.now())
+

@@ -8,16 +8,16 @@ class Token(BaseModel):
 class UserBase(BaseModel):
     name: str=Field(min_length=3)
     email: str=Field(min_length=3)
+    status: str = "Active"
+    role: str
     model_config = ConfigDict(from_attributes=True)
 
 class User(UserBase):
     id: str
-    status: str
     model_config = ConfigDict(from_attributes=True)
 
 class UserCreate(UserBase):
     password: str=Field(min_length=8)
-    status: str = "Active"
     model_config = ConfigDict(from_attributes=True)
 
 class UserUpdate(UserBase):
