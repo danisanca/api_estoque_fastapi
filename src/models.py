@@ -45,5 +45,6 @@ class Users(BASE,Serializer):
     name = Column(String(255), nullable=False)
     email = Column(String(255), nullable=False)
     password = Column(String(255), nullable=False)
+    status = Column(String(255), nullable=False)
     created_at = Column(TIMESTAMP, default=datetime.now())
     updated_at = Column(TIMESTAMP, default=datetime.now(), onupdate=datetime.now())

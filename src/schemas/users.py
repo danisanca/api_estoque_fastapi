@@ -12,10 +12,12 @@ class UserBase(BaseModel):
 
 class User(UserBase):
     id: str
+    status: str
     model_config = ConfigDict(from_attributes=True)
 
 class UserCreate(UserBase):
     password: str=Field(min_length=8)
+    status: str = "Active"
     model_config = ConfigDict(from_attributes=True)
 
 class UserUpdate(UserBase):
